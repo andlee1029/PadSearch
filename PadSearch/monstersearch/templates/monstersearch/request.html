@@ -1,0 +1,41 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'monstersearch/style.css' %}?{% now 'U' %}">
+<script src="{% static 'monstersearch/monsterbox.js' %}?{% now 'U' %}"></script>
+<div id="nav_bar">
+    <h2>PadSearch</h2>
+    <a href="https://github.com"><h3>GitHub</h3></a>
+</div>
+<div id="search_box">
+    <form id="search_form" action="/monstersearch/" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Submit">
+    </form>
+</div>
+<div id="monster_box">
+        {% for monster in monsters %}
+                <button class="monster" id="monster_{{ monster.id }}" onClick="onMonsterClick(this.id)"><img src="{% static monster.image_path %}"></button>
+        {% endfor %}
+</div>
+<div class="selected_box">
+    {% for monster in monsters %}
+        <div class="monster_info hidden" id="info_{{ monster.id }}">
+            <div class="title">
+                <img src="{% static monster.image_path %}">
+                <h3>{{monster.name}}</h3>
+                <button id="button_{{ monster.id }}" onClick="exitInfo(this.id)">Remove</button>
+            </div>
+            <div class="awakenings">
+                <h3>Awakenings:</h3>
+            </div>
+            <div class="skill">
+                <h3>Active Skill: </h3>
+                <p>{{monster.askill}}</p>
+            </div>
+            <div class="skill">
+                <h3>Leader Skill: </h3>
+                <p>{{monster.lskill}}</p>
+            </div>
+        </div>
+    {% endfor %}
+</div>

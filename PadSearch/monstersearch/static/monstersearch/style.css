@@ -1,0 +1,127 @@
+body {
+    background-color: #edede9;
+    margin:0;
+}
+
+#search_box {
+    background-color: #f5ebe0;
+    margin: 2vh;
+    margin-top: 20px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+}
+
+#nav_bar {
+    top:0;
+    width:100%;
+    background-color: #f5ebe0;
+    border-bottom: black;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#nav_bar h2 {
+    margin:auto;
+}
+
+#nav_bar a {
+    text-decoration: none;
+    color: inherit;
+    margin-right:2vh;
+}
+
+#search_form {
+    margin:0;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+}
+
+#id_monster_attributes {
+    list-style-type: none;
+}
+
+#id_monster_types {
+    list-style-type: none;
+}
+
+/* 
+Monster box styling
+*/
+
+#monster_box {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 2vh;
+    justify-content:flex-start;
+    position: relative;
+}
+
+#monster_box.hidden {
+    display: none;
+}
+
+.monster {
+    padding: 0;
+    margin: 2px;
+    
+}
+
+.monster.active {
+    border-style: dotted;
+    border-color: rgb(89, 5, 246);
+    border-width: 3px;
+}
+
+.selected_box {
+    display: flex;
+    flex-direction: row;
+    margin: 2vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px;
+}
+
+.monster_info {
+    border-style: solid;
+    border-color: black;
+    border-width: 2px;
+    background-color: #f5ebe0;
+    width: 20%;
+    height: 27%;
+    min-width: 300px;
+    min-height: 400px;
+}
+
+.monster_info.hidden {
+    display: none;
+}
+
+.title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 20px;
+}
+
+.title button {
+    margin-bottom: auto;
+    margin-left: auto
+}
+
+.skill {
+    margin-left: 20px;
+}
+
+.awakenings {
+    margin-left: 20px;
+}
+
